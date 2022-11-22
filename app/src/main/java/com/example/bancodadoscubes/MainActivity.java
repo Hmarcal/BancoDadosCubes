@@ -1,5 +1,6 @@
 package com.example.bancodadoscubes;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -38,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        btn2x2 = (Button) findViewById(R.id.c2x2XML);
+
+
+        btn2x2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bt2x2Intent = new Intent(MainActivity.this, Cronometro2x2.class);
+                startActivity(bt2x2Intent);
+            }
+        });
 
 
 
