@@ -3,6 +3,7 @@ package com.example.bancodadoscubes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 public class Cadastrar2x2 extends AppCompatActivity {
     
     private Button btnCadastra2x2;
-    
+    private Button btnTempos2x2;
     private EditText tempoCb2x2;
     
     private Cube2x2DB db;
@@ -27,6 +28,7 @@ public class Cadastrar2x2 extends AppCompatActivity {
         
         db = new Cube2x2DB(this);
         btnCadastra2x2 = findViewById(R.id.cadastra2x2XML);
+        btnTempos2x2 = findViewById(R.id.visutempos2x2XML);
         tempoCb2x2 = findViewById(R.id.tempo2x2XML);
         
         
@@ -48,13 +50,16 @@ public class Cadastrar2x2 extends AppCompatActivity {
                        Toast.makeText(Cadastrar2x2.this,"Ops! Não foi possível salvar o tempo.", Toast.LENGTH_LONG).show();
                    
                    tempoCb2x2.setText("");
-                   
                 }
-                
-                
             }
         });
         
-        
+        btnTempos2x2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent visuTemp2x2 = new Intent(Cadastrar2x2.this,ExibirTemp2x2.class);
+            }
+        });
+
     }
 }

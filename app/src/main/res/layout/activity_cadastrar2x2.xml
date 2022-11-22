@@ -22,7 +22,7 @@
         android:text="CADASTRA" />
 
     <Button
-        android:id="@+id/visutemposXML"
+        android:id="@+id/visutempos2x2XML"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
