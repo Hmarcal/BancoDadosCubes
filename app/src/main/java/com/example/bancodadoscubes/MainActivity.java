@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn4x4;
     private Button btn5x5;
     private Button btn6x6;
+    private Button btnVisutemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

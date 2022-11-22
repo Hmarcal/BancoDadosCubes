@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:background="@color/crono"
-            android:text="00:00:00.000"
+            android:text="00:00:00:000"
             android:textColor="@color/black"
             android:textSize="60dp"
             android:textStyle="bold" />
