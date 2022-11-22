@@ -13,6 +13,27 @@
         android:theme="@style/Theme.BancoDadosCubes"
         tools:targetApi="31">
         <activity
+            android:name=".Cadastrar2x2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cronometro2x2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cube3x3DB"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Cube2x2DB"
             android:exported="false">
             <meta-data

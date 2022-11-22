@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#E7ED2F</color>
+    <color name="green">#058015</color>
+    <color name="crono">#87E2FF</color>
+    <color name="fome">#FF955C</color>
+    <color name="fundo">#EFFF5A</color>
+    <color name="toolboard">#0055FC</color>
+    <color name="red">#cf2121</color>
 </resources>
