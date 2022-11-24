@@ -14,7 +14,7 @@ public class Cadastrar2x2 extends AppCompatActivity {
     
     private Button btnCadastra2x2;
     private EditText tempoCb2x2;
-    private Contagem2x2 TempoCRONO;
+
     
     private Cube2x2DB db;
     

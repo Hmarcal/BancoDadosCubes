@@ -51,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn3x3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bt3x3Intent = new Intent(MainActivity.this, Cronometro2x2.class);
+                startActivity(bt3x3Intent);
+            }
+        });
+
 
 
     }
