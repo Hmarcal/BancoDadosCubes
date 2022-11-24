@@ -40,8 +40,7 @@ public class Contagem2x2 implements Runnable{
             int minutes = (int) (((since / MILLIS_TO_MINUTES)) % 60);
             int hours = (int) ((since / (MILLIS_TO_HOURS))%24);
             int millis = (int) since % 1000;
-
-            ((Cronometro2x2)cContext).updateTimerText(String.format("%02d:%02d:%02d:%03d", hours, minutes, seconds, millis));
+            ((Cronometro2x2)cContext).updateTimerText(String.format("%02d:%02d:%02d.%03d", hours, minutes, seconds, millis));
         }
 
 

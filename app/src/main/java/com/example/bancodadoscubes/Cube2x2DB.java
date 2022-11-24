@@ -26,7 +26,7 @@ public class Cube2x2DB extends SQLiteOpenHelper {
     private static final String SQL_CREATE_TABLE =
             "CREATE TABLE " +TABLE_NAME + " ("
                     + COLUNA0 +" INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + COLUNA1 + " FLOAT )";
+                    + COLUNA1 + " TEXT )";
 
 
 
@@ -57,7 +57,7 @@ public class Cube2x2DB extends SQLiteOpenHelper {
         try{
             ContentValues valores2x2 = new ContentValues();
 
-            valores2x2.put(COLUNA1, cube2x2.getTempo());
+            valores2x2.put(COLUNA1, cube2x2.getTempo2x2());
             if (id !=0){
                 int count = db.update(TABLE_NAME, valores2x2,"_id =?",new String[]{String.valueOf(id)});
                 return count;
@@ -74,11 +74,11 @@ public class Cube2x2DB extends SQLiteOpenHelper {
 
     }
 
-    public int apaga2x2(String tempo2x2){
+    public int apagar2x2(String Apagartempo2x2){
         SQLiteDatabase db = getWritableDatabase();
         try {
 
-            int count = db.delete(TABLE_NAME, "nome?", new String[]{tempo2x2});
+            int count = db.delete(TABLE_NAME, "tempo=?", new String[]{Apagartempo2x2});
             Log.i(TAG,"deletou registro 2x2 =>" + count);
             return count;
 
@@ -91,12 +91,14 @@ public class Cube2x2DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ArrayList<Cube2x2> lista2x2 = new ArrayList<>();
         try{
-            Cursor c2x2 = db.query(TABLE_NAME, null,null,null, null, null, null);
+            Cursor c2x2 = db.query(TABLE_NAME, null,null,null, null, null, "tempo asc");
             if(c2x2.moveToFirst()){
                 do {
                     @SuppressLint("Range") long id = c2x2.getLong(c2x2.getColumnIndex("_id"));
-                    @SuppressLint("Range") Float tempo = c2x2.getFloat(c2x2.getColumnIndex("tempo"));
+                    @SuppressLint("Range") String tempo = c2x2.getString(c2x2.getColumnIndex("tempo"));
 
+                    Cube2x2 currentContact2x2 = new Cube2x2(id, tempo);
+                    lista2x2.add(currentContact2x2);
 
                 }while(c2x2.moveToNext());
             }
@@ -104,6 +106,8 @@ public class Cube2x2DB extends SQLiteOpenHelper {
         }finally {
             db.close();
         }
+
+
     }
 
 

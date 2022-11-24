@@ -13,8 +13,8 @@ import android.widget.Toast;
 public class Cadastrar2x2 extends AppCompatActivity {
     
     private Button btnCadastra2x2;
-    private Button btnTempos2x2;
     private EditText tempoCb2x2;
+    private Contagem2x2 TempoCRONO;
     
     private Cube2x2DB db;
     
@@ -28,7 +28,6 @@ public class Cadastrar2x2 extends AppCompatActivity {
         
         db = new Cube2x2DB(this);
         btnCadastra2x2 = findViewById(R.id.cadastra2x2XML);
-        btnTempos2x2 = findViewById(R.id.visutempos2x2XML);
         tempoCb2x2 = findViewById(R.id.tempo2x2XML);
         
         
@@ -39,7 +38,8 @@ public class Cadastrar2x2 extends AppCompatActivity {
                     Toast.makeText(Cadastrar2x2.this, "Por favor preencha o tempo!",Toast.LENGTH_SHORT).show();
                 }else {
                     
-                   Float temp2x2 = Float.valueOf(tempoCb2x2.getText().toString());
+                   String temp2x2 = tempoCb2x2.getText().toString();
+
                    
                    Cube2x2 cadastro2x2 = new Cube2x2(0,temp2x2);
                    
@@ -53,13 +53,7 @@ public class Cadastrar2x2 extends AppCompatActivity {
                 }
             }
         });
-        
-        btnTempos2x2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent visuTemp2x2 = new Intent(Cadastrar2x2.this,ExibirTemp2x2.class);
-            }
-        });
+
 
     }
 }

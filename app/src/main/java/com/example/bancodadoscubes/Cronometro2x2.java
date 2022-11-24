@@ -16,6 +16,8 @@ public class Cronometro2x2 extends AppCompatActivity {
     private Button btnStart2x2;
     private Button btnStop2x2;
     private Button btnSave2x2;
+    private Button btnTempos2x2;
+    private Button btnApagartemp2x2;
 
     private Context cContext;
     private Contagem2x2 cContagem2x2;
@@ -34,7 +36,8 @@ public class Cronometro2x2 extends AppCompatActivity {
         btnStart2x2 = findViewById(R.id.start2x2XML);
         btnStop2x2 = findViewById(R.id.stop2x2XML);
         btnSave2x2 = findViewById(R.id.save2x2XML);
-
+        btnTempos2x2 = findViewById(R.id.visutempos2x2XML);
+        btnApagartemp2x2 = findViewById(R.id.apaga2x2XML);
 
 
         btnStart2x2.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,22 @@ public class Cronometro2x2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent save2x2Intent = new Intent(Cronometro2x2.this, Cadastrar2x2.class);
                 startActivity(save2x2Intent);
+            }
+        });
+
+        btnTempos2x2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent visuTemp2x2 = new Intent(Cronometro2x2.this,ExibirTemp2x2.class);
+                startActivity(visuTemp2x2);
+            }
+        });
+
+        btnApagartemp2x2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent apagar2x2Intent = new Intent(Cronometro2x2.this,Apaga2x2.class);
+                startActivity(apagar2x2Intent);
             }
         });
 

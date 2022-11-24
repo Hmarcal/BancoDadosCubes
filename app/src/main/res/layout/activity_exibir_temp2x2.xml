@@ -8,6 +8,7 @@
     tools:context=".ExibirTemp2x2">
 
 
+
     <ListView
         android:id="@+id/listView2x2XML"
         android:layout_width="match_parent"

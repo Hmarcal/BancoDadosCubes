@@ -16,7 +16,7 @@ public class Cube3x3 {
 
     @Override
     public String toString(){
-        return "\n" + "Tempo :"+tempo+"\n";
+        return "\n" + "Tempo "+"\n"+tempo+"\n";
     }
 
 }

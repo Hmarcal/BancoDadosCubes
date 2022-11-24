@@ -73,11 +73,11 @@ public class Cube3x3DB extends SQLiteOpenHelper {
 
     }
 
-    public int apaga3x3(String tempo2x2){
+    public int apagar3x3(String tempo2x2){
         SQLiteDatabase db = getWritableDatabase();
         try {
 
-            int count = db.delete(TABLE_NAME, "nome?", new String[]{tempo2x2});
+            int count = db.delete(TABLE_NAME, "Tempo?", new String[]{tempo2x2});
             Log.i(TAG,"deletou registro 3x3 =>" + count);
             return count;
 
@@ -90,12 +90,14 @@ public class Cube3x3DB extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ArrayList<Cube3x3> lista3x3 = new ArrayList<>();
         try{
-            Cursor c3x3 = db.query(TABLE_NAME, null,null,null, null, null, null);
+            Cursor c3x3 = db.query(TABLE_NAME, null,null,null, null, null, "tempo asc");
             if(c3x3.moveToFirst()){
                 do {
                     @SuppressLint("Range") long id = c3x3.getLong(c3x3.getColumnIndex("_id"));
                     @SuppressLint("Range") Float tempo = c3x3.getFloat(c3x3.getColumnIndex("tempo"));
 
+                    Cube3x3 currentContact3x3 = new Cube3x3(id, tempo);
+                    lista3x3.add(currentContact3x3);
 
                 }while(c3x3.moveToNext());
             }

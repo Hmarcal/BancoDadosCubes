@@ -13,6 +13,13 @@
         android:theme="@style/Theme.BancoDadosCubes"
         tools:targetApi="31">
         <activity
+            android:name=".Apaga2x2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ExibirTemp2x2"
             android:exported="false">
             <meta-data
